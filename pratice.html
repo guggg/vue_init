@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model:value="input">
+        <button v-on:click="add">ADD</button>
+        <ul>
+            <li v-for="todo in todos">{{todo}}</li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                input: "", //負責存取輸入的東西
+                todos:["吃飯", "睡覺", "打咚咚"],
+            },
+            methods:{ //裡面塞function
+                add(){
+                    this.todos.push(this.input); //this會是data，push為加入陣列
+                    this.input = "";
+                }
+            }
+        });
+        document
+    </script>
+</body>
+</html>
